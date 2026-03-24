@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ============================================
+         PasswordSafe - OLED Security Dashboard
+         Style: Midnight slate + emerald trust + cyan highlights
+         ============================================ -->
+
+    <color name="primary">#22C55E</color>
+    <color name="primary_dark">#16A34A</color>
+    <color name="primary_light">#86EFAC</color>
+    <color name="primary_10">#11261B</color>
+    <color name="primary_20">#193223</color>
+
+    <color name="secondary">#38BDF8</color>
+    <color name="secondary_dark">#0EA5E9</color>
+    <color name="secondary_light">#7DD3FC</color>
+
+    <color name="accent">#14B8A6</color>
+    <color name="accent_dark">#0F766E</color>
+    <color name="accent_light">#5EEAD4</color>
+
+    <color name="background">#020617</color>
+    <color name="background_elevated">#0F172A</color>
+    <color name="background_surface">#111827</color>
+    <color name="background_card">#0F1A2E</color>
+    <color name="background_modal">#111C31</color>
+
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#B6C2D2</color>
+    <color name="text_tertiary">#7B8AA0</color>
+    <color name="text_hint">#5C6B82</color>
+    <color name="text_inverse">#020617</color>
+
+    <color name="success">#22C55E</color>
+    <color name="success_light">#4ADE80</color>
+    <color name="warning">#F59E0B</color>
+    <color name="warning_light">#FBBF24</color>
+    <color name="error">#EF4444</color>
+    <color name="error_light">#F87171</color>
+    <color name="info">#38BDF8</color>
+    <color name="info_light">#7DD3FC</color>
+
+    <color name="red">#EF4444</color>
+    <color name="green">#10B981</color>
+    <color name="orange">#F59E0B</color>
+    <color name="yellow">#FBBF24</color>
+    <color name="gray">#64748B</color>
+
+    <color name="border">#22314A</color>
+    <color name="border_light">#172235</color>
+    <color name="divider">#172235</color>
+    <color name="divider_light">#22314A</color>
+
+    <color name="gradient_start">#22C55E</color>
+    <color name="gradient_end">#14B8A6</color>
+
+    <color name="glow_primary">#3322C55E</color>
+    <color name="glow_accent">#3314B8A6</color>
+    <color name="glow_success">#3322C55E</color>
+
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#40000000</color>
+    <color name="scrim">#99000000</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="white_20">#33FFFFFF</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+</resources>

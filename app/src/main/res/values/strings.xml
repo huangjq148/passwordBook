@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用名称 -->
+    <string name="app_name">密码保险箱</string>
+    
+    <!-- 页面标题 -->
+    <string name="title_home">首页</string>
+    <string name="title_accounts">账号列表</string>
+    <string name="title_settings">设置</string>
+    <string name="title_add_account">添加账号</string>
+    <string name="title_edit_account">编辑账号</string>
+    <string name="title_account_detail">账号详情</string>
+    
+    <!-- 验证相关 -->
+    <string name="welcome_title">欢迎使用密码保险箱</string>
+    <string name="start_using">开始使用</string>
+    <string name="setup_password_title">设置主密码</string>
+    <string name="setup_password_subtitle">请设置一个安全的主密码来保护您的数据</string>
+    <string name="input_password_title">输入密码</string>
+    <string name="input_password_hint">请输入主密码</string>
+    <string name="confirm_password_hint">请确认主密码</string>
+    <string name="password_empty_error">密码不能为空</string>
+    <string name="password_mismatch_error">两次密码不一致</string>
+    <string name="password_too_short_error">密码长度至少8位</string>
+    <string name="password_alphanumeric_only_error">密码只能包含英文字母和数字</string>
+    <string name="password_weak_warning">密码强度较弱，建议增加复杂度</string>
+    <string name="wrong_password_error">密码错误</string>
+    <string name="unlock">解锁</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    
+    <!-- 账号管理 -->
+    <string name="account_name">账号名称</string>
+    <string name="account_name_hint">例如：微信、支付宝</string>
+    <string name="username">用户名</string>
+    <string name="username_hint">登录账号</string>
+    <string name="password">密码</string>
+    <string name="password_hint">登录密码</string>
+    <string name="website">网站</string>
+    <string name="website_hint">https://example.com</string>
+    <string name="notes">备注</string>
+    <string name="notes_hint">其他信息</string>
+    <string name="category">分类</string>
+    <string name="category_hint">选择分类</string>
+    
+    <!-- 分类 -->
+    <string name="category_social">社交</string>
+    <string name="category_finance">金融</string>
+    <string name="category_shopping">购物</string>
+    <string name="category_work">工作</string>
+    <string name="category_entertainment">娱乐</string>
+    <string name="category_other">其他</string>
+    
+    <!-- 操作按钮 -->
+    <string name="save">保存</string>
+    <string name="delete">删除</string>
+    <string name="edit">编辑</string>
+    <string name="copy">复制</string>
+    <string name="copy_password">复制密码</string>
+    <string name="copy_username">复制用户名</string>
+    <string name="generate_password">生成密码</string>
+    <string name="show_password">显示密码</string>
+    <string name="hide_password">隐藏密码</string>
+    <string name="copied_to_clipboard">已复制到剪贴板</string>
+    
+    <!-- 确认对话框 -->
+    <string name="confirm_delete_title">确认删除</string>
+    <string name="confirm_delete_message">确定要删除这个账号吗？此操作不可恢复。</string>
+    <string name="confirm_logout_title">确认退出</string>
+    <string name="confirm_logout_message">确定要退出登录吗？退出后需要重新输入主密码。</string>
+    
+    <!-- 设置 -->
+    <string name="settings_security">安全设置</string>
+    <string name="settings_auto_lock">自动锁定</string>
+    <string name="settings_auto_lock_summary">应用闲置后自动锁定</string>
+    <string name="settings_biometric">生物识别解锁</string>
+    <string name="settings_biometric_summary">使用指纹或面容解锁</string>
+    <string name="settings_change_password">修改主密码</string>
+    <string name="settings_change_password_summary">更改用于解锁应用的主密码</string>
+    <string name="settings_data">数据管理</string>
+    <string name="settings_export">导出数据</string>
+    <string name="settings_export_summary">导出加密的账号数据</string>
+    <string name="settings_import">导入数据</string>
+    <string name="settings_import_summary">从备份文件导入数据</string>
+    <string name="settings_clear_data">清除所有数据</string>
+    <string name="settings_clear_data_summary">删除所有账号信息（不可恢复）</string>
+    <string name="settings_about">关于</string>
+    <string name="settings_version">版本</string>
+    <string name="settings_lock_now">立即锁定</string>
+    <string name="settings_lock_now_summary">立刻回到验证页面</string>
+    <string name="settings_theme">外观主题</string>
+    <string name="settings_theme_summary">跟随系统</string>
+    <string name="settings_last_backup">最近备份</string>
+    <string name="settings_last_backup_never">尚未备份</string>
+    <string name="settings_last_backup_just_now">刚刚完成备份</string>
+    <string name="settings_change_password_title">修改主密码</string>
+    <string name="settings_change_password_tip">更新后下次打开应用将使用新主密码登录</string>
+    <string name="settings_current_password">当前主密码</string>
+    <string name="settings_new_password">新主密码</string>
+    <string name="settings_confirm_new_password">确认新主密码</string>
+    <string name="settings_biometric_enabled">已启用指纹或面容解锁</string>
+    <string name="settings_biometric_disabled">未启用生物识别解锁</string>
+    <string name="settings_biometric_enable_failed">启用生物识别失败，请先在系统中录入指纹或面容</string>
+    <string name="settings_password_required">主密码保护已开启</string>
+    <string name="settings_change_password_success">主密码已更新</string>
+    <string name="settings_wrong_current_password">当前主密码不正确</string>
+    <string name="settings_import_hint">导入时会直接写入新的账号数据</string>
+    <string name="settings_export_count">%1$d 个账号可导出</string>
+    <string name="settings_lock_immediately">切换到后台后立即锁定</string>
+    
+    <!-- 自动锁定时间选项 -->
+    <string name="auto_lock_immediately">立即</string>
+    <string name="auto_lock_1min">1分钟</string>
+    <string name="auto_lock_5min">5分钟</string>
+    <string name="auto_lock_15min">15分钟</string>
+    <string name="auto_lock_30min">30分钟</string>
+    <string name="auto_lock_never">从不</string>
+    
+    <!-- 生物识别 -->
+    <string name="biometric_available">生物识别可用</string>
+    <string name="biometric_not_supported">设备不支持生物识别</string>
+    <string name="biometric_not_available">生物识别不可用</string>
+    <string name="biometric_not_enrolled">未录入生物识别信息</string>
+    <string name="biometric_unknown_error">生物识别未知错误</string>
+    <string name="biometric_unlock_title">生物识别解锁</string>
+    <string name="biometric_unlock_subtitle">请验证身份以解锁密码库</string>
+    <string name="biometric_lockout">尝试次数过多，请稍后再试</string>
+    <string name="biometric_lockout_permanent">生物识别已禁用，请使用密码</string>
+    <string name="use_password">使用密码</string>
+    <string name="biometric_enable_title">验证后启用生物识别</string>
+    <string name="biometric_enable_subtitle">请验证身份以启用快捷解锁</string>
+    <string name="theme_follow_system">跟随系统</string>
+    <string name="theme_light">浅色模式</string>
+    <string name="theme_dark">深色模式</string>
+    
+    <!-- 密码强度 -->
+    <string name="password_strength_weak">弱</string>
+    <string name="password_strength_medium">中</string>
+    <string name="password_strength_strong">强</string>
+    
+    <!-- 密码生成器 -->
+    <string name="password_generator_title">密码生成器</string>
+    <string name="password_length">密码长度</string>
+    <string name="include_uppercase">包含大写字母</string>
+    <string name="include_lowercase">包含小写字母</string>
+    <string name="include_digits">包含数字</string>
+    <string name="include_special">包含特殊符号</string>
+    <string name="regenerate">重新生成</string>
+    
+    <!-- 错误信息 -->
+    <string name="error_generic">操作失败，请重试</string>
+    <string name="error_save_failed">保存失败</string>
+    <string name="error_delete_failed">删除失败</string>
+    <string name="error_export_failed">导出失败</string>
+    <string name="error_import_failed">导入失败</string>
+    <string name="error_invalid_file">无效的文件格式</string>
+    
+    <!-- 空状态 -->
+    <string name="empty_accounts_title">还没有账号</string>
+    <string name="empty_accounts_message">点击右下角的按钮添加您的第一个账号</string>
+    
+    <!-- 搜索 -->
+    <string name="search_hint">搜索账号</string>
+    <string name="no_results">未找到匹配的账号</string>
+    
+    <!-- 首页 -->
+    <string name="recent_accounts">最近使用</string>
+    <string name="status_protected">已保护</string>
+    <string name="account_count">%d 个账号</string>
+    
+    <!-- 账号详情 -->
+    <string name="use_count">使用次数</string>
+    <string name="last_used">最后使用</string>
+    <string name="never_used">从未使用</string>
+    <string name="today">今天</string>
+    <string name="yesterday">昨天</string>
+    <string name="this_week">本周</string>
+    <string name="this_month">本月</string>
+    
+    <!-- 分类 -->
+    <string name="category_all">全部</string>
+    
+    <!-- 表单 -->
+    <string name="website_name">网站名称</string>
+    <string name="website_name_hint">例如：微信、支付宝</string>
+    
+    <!-- 密码生成器 -->
+    <string name="character_types">字符类型</string>
+    
+    <!-- 验证错误 -->
+    <string name="error_website_empty">网站名称不能为空</string>
+    <string name="error_account_empty">账号不能为空</string>
+    <string name="error_password_empty">密码不能为空</string>
+    
+    <!-- 设置页面 -->
+    <string name="settings_other">其他</string>
+    <string name="settings_reset">重置应用</string>
+    <string name="settings_reset_summary">清除所有数据并恢复初始状态</string>
+    <string name="settings_copy_text">复制为文本</string>
+    <string name="settings_copy_text_summary">复制所有账号信息到剪贴板</string>
+    
+    <!-- 自动锁定选项 -->
+    <string-array name="auto_lock_options">
+        <item>@string/auto_lock_1min</item>
+        <item>@string/auto_lock_5min</item>
+        <item>@string/auto_lock_15min</item>
+        <item>@string/auto_lock_30min</item>
+        <item>@string/auto_lock_never</item>
+    </string-array>
+    
+    <!-- 确认重置 -->
+    <string name="confirm_reset_title">确认重置</string>
+    <string name="confirm_reset_message">确定要重置应用吗？此操作将删除所有账号数据，且不可恢复。</string>
+    <string name="reset">重置</string>
+    
+    <!-- 导入导出 -->
+    <string name="export_success">导出成功</string>
+    <string name="import_success">导入成功</string>
+    <string name="copy_success">复制成功</string>
+    <string name="select_file">选择文件</string>
+</resources>

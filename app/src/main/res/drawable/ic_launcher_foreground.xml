@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Shield icon for password safe -->
+    <group android:translateX="27" android:translateY="27">
+        <path
+            android:fillColor="#F59E0B"
+            android:pathData="M27,3L6,12v13.5c0,12.32 8.53,23.84 20,27 11.47,-3.16 20,-14.68 20,-27V12L27,3z"/>
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M24,36l-6,-6 1.41,-1.41L24,33.17l11.59,-11.59L37,24L24,36z"/>
+    </group>
+</vector>
