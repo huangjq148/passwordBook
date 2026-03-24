@@ -101,6 +101,7 @@ class MainActivity : AppCompatActivity() {
     private fun setBottomNavTab(button: MaterialButton, selected: Boolean) {
         button.isCheckable = true
         button.isChecked = selected
+        button.isSelected = selected
         animateNavTab(button, selected)
     }
 

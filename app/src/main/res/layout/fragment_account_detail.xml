@@ -6,11 +6,10 @@
     android:layout_height="match_parent"
     android:background="@color/background">
 
-    <!-- Top Glow -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:alpha="0.05"
+        android:layout_height="260dp"
+        android:alpha="0.08"
         android:background="@drawable/bg_glow_primary" />
 
     <com.google.android.material.appbar.AppBarLayout
@@ -24,6 +23,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:paddingHorizontal="8dp"
             app:navigationIcon="@drawable/ic_arrow_back"
             app:navigationIconTint="@color/text_primary">
 
@@ -41,18 +41,21 @@
                 android:layout_height="44dp"
                 android:layout_gravity="end"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/bg_copy_button"
+                android:background="@drawable/bg_detail_action_button"
                 android:contentDescription="@string/edit"
+                android:padding="10dp"
                 android:src="@drawable/ic_edit"
-                app:tint="@color/primary" />
+                app:tint="@color/text_primary" />
 
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
         android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -60,82 +63,124 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="20dp"
-            android:paddingBottom="100dp">
+            android:paddingStart="20dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="28dp">
 
-            <!-- Avatar -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardAvatar"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                app:cardBackgroundColor="@color/background_elevated"
-                app:cardCornerRadius="24dp"
-                app:cardElevation="0dp"
-                app:strokeColor="@color/primary"
-                app:strokeWidth="2dp">
-
-                <TextView
-                    android:id="@+id/tvAvatar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textColor="@color/primary"
-                    android:textSize="40sp"
-                    android:textStyle="bold"
-                    tools:text="W" />
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- Website Name -->
-            <TextView
-                android:id="@+id/tvWebsite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:textColor="@color/text_primary"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                tools:text="WeChat" />
-
-            <!-- Website URL -->
-            <TextView
-                android:id="@+id/tvWebsiteUrl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/primary"
-                android:textSize="14sp"
-                android:visibility="gone"
-                tools:text="https://weixin.qq.com" />
-
-            <!-- Category Tag -->
-            <TextView
-                android:id="@+id/tvCategory"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_category_tag"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="4dp"
-                android:textColor="@color/primary"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                tools:text="Social"
-                tools:visibility="visible" />
-
-            <!-- Info Card -->
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 app:cardBackgroundColor="@color/background_card"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/border"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:background="@drawable/bg_detail_hero_band" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-48dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingStart="24dp"
+                        android:paddingTop="0dp"
+                        android:paddingEnd="24dp"
+                        android:paddingBottom="24dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAvatar"
+                            android:layout_width="104dp"
+                            android:layout_height="104dp"
+                            app:cardBackgroundColor="@color/background_elevated"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/primary_20"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:id="@+id/tvAvatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:textColor="@color/primary_dark"
+                                android:textSize="42sp"
+                                android:textStyle="bold"
+                                tools:text="W" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/tvWebsite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:gravity="center"
+                            android:textColor="@color/text_primary"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            tools:text="WeChat" />
+
+                        <TextView
+                            android:id="@+id/tvCategory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_category_tag"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="5dp"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:text="社交"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tvWebsiteUrl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:autoLink="web"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:linksClickable="true"
+                            android:textColor="@color/secondary_dark"
+                            android:textSize="13sp"
+                            android:visibility="gone"
+                            tools:text="https://weixin.qq.com" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="@string/account_detail_subtitle"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:cardBackgroundColor="@color/background_card"
+                app:cardCornerRadius="26dp"
                 app:cardElevation="0dp"
                 app:strokeColor="@color/border"
                 app:strokeWidth="1dp">
@@ -146,11 +191,29 @@
                     android:orientation="vertical"
                     android:padding="20dp">
 
-                    <!-- Username -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_detail_section_credentials"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/account_detail_section_credentials_hint"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginTop="18dp"
+                        android:background="@drawable/bg_detail_field_block"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -162,7 +225,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -172,17 +235,20 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:ellipsize="end"
-                                android:maxLines="1"
+                                android:maxLines="2"
                                 android:textColor="@color/text_primary"
-                                android:textSize="16sp"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
                                 tools:text="user@example.com" />
 
                             <ImageButton
                                 android:id="@+id/btnCopyAccount"
-                                android:layout_width="44dp"
-                                android:layout_height="44dp"
-                                android:background="@drawable/bg_copy_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="12dp"
+                                android:background="@drawable/bg_detail_action_button"
                                 android:contentDescription="@string/copy_username"
+                                android:padding="9dp"
                                 android:src="@drawable/ic_copy"
                                 app:tint="@color/text_secondary" />
 
@@ -190,19 +256,13 @@
 
                     </LinearLayout>
 
-                    <!-- Divider -->
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:background="@color/border" />
-
-                    <!-- Password -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/bg_detail_field_block"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -214,7 +274,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -225,37 +285,41 @@
                                 android:layout_weight="1"
                                 android:ellipsize="end"
                                 android:fontFamily="monospace"
-                                android:maxLines="1"
+                                android:maxLines="2"
                                 android:textColor="@color/text_primary"
-                                android:textSize="16sp"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
                                 tools:text="••••••••" />
 
                             <ImageButton
                                 android:id="@+id/btnTogglePassword"
-                                android:layout_width="44dp"
-                                android:layout_height="44dp"
-                                android:background="@drawable/bg_copy_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="12dp"
+                                android:background="@drawable/bg_detail_action_button"
                                 android:contentDescription="@string/show_password"
+                                android:padding="9dp"
                                 android:src="@drawable/ic_visibility"
                                 app:tint="@color/text_secondary" />
 
                             <ImageButton
                                 android:id="@+id/btnCopyPassword"
-                                android:layout_width="44dp"
-                                android:layout_height="44dp"
-                                android:background="@drawable/bg_copy_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="8dp"
+                                android:background="@drawable/bg_detail_action_button"
                                 android:contentDescription="@string/copy_password"
+                                android:padding="9dp"
                                 android:src="@drawable/ic_copy"
                                 app:tint="@color/text_secondary" />
 
                         </LinearLayout>
 
-                        <!-- Password Strength -->
                         <LinearLayout
                             android:id="@+id/passwordStrengthLayout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="14dp"
                             android:gravity="center_vertical"
                             android:orientation="horizontal"
                             android:visibility="gone"
@@ -264,14 +328,14 @@
                             <View
                                 android:id="@+id/strengthIndicator1"
                                 android:layout_width="0dp"
-                                android:layout_height="4dp"
+                                android:layout_height="5dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/bg_strength_weak" />
 
                             <View
                                 android:id="@+id/strengthIndicator2"
                                 android:layout_width="0dp"
-                                android:layout_height="4dp"
+                                android:layout_height="5dp"
                                 android:layout_marginStart="4dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/bg_strength_medium" />
@@ -279,7 +343,7 @@
                             <View
                                 android:id="@+id/strengthIndicator3"
                                 android:layout_width="0dp"
-                                android:layout_height="4dp"
+                                android:layout_height="5dp"
                                 android:layout_marginStart="4dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/bg_strength_strong" />
@@ -292,7 +356,7 @@
                                 android:textColor="@color/success"
                                 android:textSize="12sp"
                                 android:textStyle="bold"
-                                tools:text="Strong" />
+                                tools:text="强" />
 
                         </LinearLayout>
 
@@ -300,17 +364,16 @@
 
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <!-- Notes Card -->
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/notesCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="18dp"
                 android:visibility="gone"
                 app:cardBackgroundColor="@color/background_card"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="26dp"
                 app:cardElevation="0dp"
                 app:strokeColor="@color/border"
                 app:strokeWidth="1dp"
@@ -326,29 +389,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/notes"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="12sp" />
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvNotes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:textColor="@color/text_primary"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="2dp"
+                        android:textColor="@color/text_secondary"
                         android:textSize="14sp"
                         tools:text="This is a note" />
 
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <!-- Stats Card -->
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="18dp"
                 app:cardBackgroundColor="@color/background_card"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="26dp"
                 app:cardElevation="0dp"
                 app:strokeColor="@color/border"
                 app:strokeWidth="1dp">
@@ -356,91 +420,145 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="20dp">
 
-                    <!-- Use Count -->
-                    <LinearLayout
-                        android:layout_width="0dp"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:text="@string/account_detail_section_activity"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/tvUseCount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/text_primary"
-                            android:textSize="28sp"
-                            android:textStyle="bold"
-                            tools:text="5" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/use_count"
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-
-                    <!-- Divider -->
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/border" />
-
-                    <!-- Last Used -->
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/tvLastUsed"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/text_primary"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            tools:text="Today" />
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_detail_field_block"
+                            android:orientation="vertical"
+                            android:padding="18dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                            <TextView
+                                android:id="@+id/tvUseCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_primary"
+                                android:textSize="30sp"
+                                android:textStyle="bold"
+                                tools:text="5" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="@string/use_count"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="@string/last_used"
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_detail_field_block"
+                            android:orientation="vertical"
+                            android:padding="18dp">
+
+                            <TextView
+                                android:id="@+id/tvLastUsed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_primary"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                tools:text="今天" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="@string/last_used"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:cardBackgroundColor="@color/background_card"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/error_light"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_detail_danger_surface"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_detail_section_danger"
+                        android:textColor="@color/error"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/account_detail_section_danger_hint"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDelete"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="18dp"
+                        android:text="@string/delete"
+                        android:textColor="@color/error"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="16dp"
+                        app:icon="@drawable/ic_delete"
+                        app:iconGravity="textStart"
+                        app:iconPadding="10dp"
+                        app:iconTint="@color/error"
+                        app:rippleColor="@color/error_light"
+                        app:strokeColor="@color/error_light"
+                        app:strokeWidth="1dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Delete Button -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnDelete"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_gravity="bottom"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="20dp"
-        android:letterSpacing="0.02"
-        android:text="@string/delete"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/error"
-        app:cornerRadius="14dp" />
-
-    <!-- Loading -->
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"

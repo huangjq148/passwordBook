@@ -4,13 +4,17 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -51,6 +55,7 @@ class AccountDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
+        applyWindowInsets()
         setupToolbar()
         setupPasswordToggle()
         setupButtons()
@@ -58,6 +63,27 @@ class AccountDetailFragment : Fragment() {
         
         // 加载账号数据
         viewModel.loadAccount(args.accountId)
+    }
+
+    /**
+     * 适配沉浸式状态栏/导航栏
+     */
+    private fun applyWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.appBarLayout) { view, insets ->
+            val statusBars = insets.getInsets(WindowInsetsCompat.Type.statusBars())
+            view.updatePadding(
+                top = statusBars.top + resources.getDimensionPixelSize(R.dimen.top_bar_safe_spacing)
+            )
+            insets
+        }
+        ViewCompat.setOnApplyWindowInsetsListener(binding.scrollContent) { view, insets ->
+            val navigationBars = insets.getInsets(WindowInsetsCompat.Type.navigationBars())
+            view.updatePadding(
+                bottom = navigationBars.bottom + resources.getDimensionPixelSize(R.dimen.activity_vertical_margin)
+            )
+            insets
+        }
+        ViewCompat.requestApplyInsets(binding.root)
     }
 
     /**
@@ -118,6 +144,11 @@ class AccountDetailFragment : Fragment() {
     private fun updateUi(state: AccountDetailUiState) {
         // 加载状态
         binding.progressBar.isVisible = state.isLoading
+        binding.btnEdit.isEnabled = !state.isLoading && !state.isDeleting
+        binding.btnDelete.isEnabled = !state.isDeleting
+        binding.btnDelete.text = getString(
+            if (state.isDeleting) R.string.deleting else R.string.delete
+        )
 
         // 账号数据
         state.account?.let { account ->
@@ -157,6 +188,7 @@ class AccountDetailFragment : Fragment() {
         if (account.websiteUrl.isNotEmpty()) {
             binding.tvWebsiteUrl.isVisible = true
             binding.tvWebsiteUrl.text = account.websiteUrl
+            binding.tvWebsiteUrl.movementMethod = LinkMovementMethod.getInstance()
         } else {
             binding.tvWebsiteUrl.isVisible = false
         }
@@ -201,10 +233,12 @@ class AccountDetailFragment : Fragment() {
         if (isVisible) {
             binding.tvPassword.text = password
             binding.btnTogglePassword.setImageResource(R.drawable.ic_visibility_off)
+            binding.btnTogglePassword.contentDescription = getString(R.string.hide_password)
             binding.passwordStrengthLayout.isVisible = true
         } else {
             binding.tvPassword.text = "••••••••"
             binding.btnTogglePassword.setImageResource(R.drawable.ic_visibility)
+            binding.btnTogglePassword.contentDescription = getString(R.string.show_password)
             binding.passwordStrengthLayout.isVisible = false
         }
     }

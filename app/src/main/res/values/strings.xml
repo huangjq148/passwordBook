@@ -169,6 +169,13 @@
     <string name="account_count">%d 个账号</string>
     
     <!-- 账号详情 -->
+    <string name="account_detail_subtitle">敏感信息已加密保存，复制前请注意周围环境安全。</string>
+    <string name="account_detail_section_credentials">登录信息</string>
+    <string name="account_detail_section_credentials_hint">常用操作集中在这里，查看和复制都更顺手。</string>
+    <string name="account_detail_section_activity">使用情况</string>
+    <string name="account_detail_section_danger">危险操作</string>
+    <string name="account_detail_section_danger_hint">删除后无法恢复，请在确认不再需要时再执行。</string>
+    <string name="deleting">删除中...</string>
     <string name="use_count">使用次数</string>
     <string name="last_used">最后使用</string>
     <string name="never_used">从未使用</string>
